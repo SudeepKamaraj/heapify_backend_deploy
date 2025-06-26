@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB (hardcoded URI)
-mongoose.connect('mongodb://localhost:27017/heapify', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://23sudeepk:23csr218@heapify.ieyumts.mongodb.net/?retryWrites=true&w=majority&appName=Heapify', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected!'))
   .catch(err => console.log(err));
 
