@@ -4,16 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const Song = require('../models/Song');
-
-// User model
-const UserSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, unique: true },
-  password: String,
-  likedSongs: { type: [String], default: [] }, // Array of song IDs
-  history: { type: [String], default: [] }     // Array of song IDs
-});
-const User = mongoose.models.User || mongoose.model('User', UserSchema);
+const User = require('../models/User');
 
 // Middleware to verify JWT
 function authMiddleware(req, res, next) {
